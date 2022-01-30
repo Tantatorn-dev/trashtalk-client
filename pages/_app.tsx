@@ -32,3 +32,10 @@ export default function App({
     </StaticWalletProvider>
   );
 }
+
+App.getInitialProps = async () => {
+  const chainOptions = await getChainOptions();
+  return {
+    ...chainOptions,
+  };
+};
