@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import ConnectButton from "../components/ConnectButton";
+import MessageInput from "../components/MessageInput";
 import MessageList from "../components/MessageList";
 
 const Home: NextPage = () => {
@@ -13,14 +14,15 @@ const Home: NextPage = () => {
       </Head>
 
       <div className="flex flex-row h-32 m-8">
-        <h1 className="text-3xl font-mono">Terra Trashtalk</h1>
+        <h1 className="font-mono text-3xl">Terra Trashtalk</h1>
         <ConnectButton />
       </div>
 
-      <h2 className="text-xl font-mono text-center -mt-8">
+      <h2 className="-mt-8 font-mono text-xl text-center">
         A decentralized forum on Terra Network
       </h2>
       <MessageList />
+      <MessageInput />
     </div>
   );
 };

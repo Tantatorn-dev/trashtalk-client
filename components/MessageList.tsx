@@ -29,10 +29,10 @@ const MessageList = () => {
   }, [connectedWallet, lcd]);
 
   return (
-    <div className="flex flex-col items-center mt-4">
+    <div className="flex flex-col w-8/12 m-auto mt-4 overflow-y-scroll border-2 h-96">
       {messages.map((message) => (
-        <div key={message.nickname} className="flex flex-row">
-          <p className="font-mono text-xl font-bold mr-2">
+        <div key={message.nickname} className="flex flex-row text-left">
+          <p className="mr-2 font-mono text-xl font-bold">
             {message.nickname}:
           </p>
           <p className="font-mono text-xl">{message.message}</p>
