@@ -19,6 +19,7 @@ const MessageList = () => {
             get_messages: {},
           }
         );
+
         const messages = response.messages;
         setMessages(messages);
       } catch (err) {
@@ -29,7 +30,7 @@ const MessageList = () => {
   }, [connectedWallet, lcd]);
 
   return (
-    <div className="flex flex-col w-8/12 m-auto mt-4 overflow-y-scroll border-2 h-96">
+    <div className="flex flex-col w-8/12 p-3 m-auto mt-4 overflow-y-scroll border-2 border-black h-96">
       {messages.map((message) => (
         <div key={message.nickname} className="flex flex-row text-left">
           <p className="mr-2 font-mono text-xl font-bold">
