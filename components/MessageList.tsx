@@ -1,5 +1,6 @@
 import { useConnectedWallet, useLCDClient } from "@terra-money/wallet-provider";
 import { useEffect, useState } from "react";
+import { clearInterval } from "timers";
 import { Message } from "../lib/interfaces";
 
 const contractAddr = "terra1696x9gjm9mmgqy3nn8wkh62qy5vgms6088slgz";
@@ -27,6 +28,11 @@ const MessageList = () => {
       }
     };
     queryMessages();
+
+    const id = setInterval(async () => {
+      await queryMessages();
+    }, 10000);
+    return () => window.clearInterval(id);
   }, [connectedWallet, lcd]);
 
   return (
